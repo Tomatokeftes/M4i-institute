@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Institute</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        /* Navigation Styles */
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #34495e;
+        }
+        
+        /* Main Content Styles */
+        main {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .news-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        
+        .news-date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .news-title {
+            margin: 5px 0;
+            color: #2c3e50;
+        }
+        
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            background: #2c3e50;
+            color: #fff;
+        }
+        
+        /* Password Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+        }
+        
+        .modal input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        
+        .modal button {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        .modal button:hover {
+            background-color: #34495e;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 10px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Password Protection Modal -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <h3>Restricted Access</h3>
+            <p>Please enter the password to access this site:</p>
+            <input type="password" id="password" placeholder="Enter password">
+            <button onclick="checkPassword()">Submit</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>Research Institute</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="instruments.html">Instruments</a></li>
+                    <li><a href="forms.html">Submission Forms</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <main>
+            <section id="news">
+                <h2>Latest News</h2>
+                
+                <div class="news-item">
+                    <p class="news-date">March 1, 2025</p>
+                    <h3 class="news-title">New Research Grant Awarded</h3>
+                    <p>Our institute has been awarded a significant grant to study innovative approaches in our field. This funding will support our research efforts for the next three years.</p>
+                </div>
+                
+                <div class="news-item">
+                    <p class="news-date">February 15, 2025</p>
+                    <h3 class="news-title">Upcoming Conference Participation</h3>
+                    <p>Several of our researchers will be presenting their work at the International Conference on Advanced Research next month. Topics include recent breakthroughs and collaborative projects.</p>
+                </div>
+                
+                <div class="news-item">
+                    <p class="news-date">January 30, 2025</p>
+                    <h3 class="news-title">New Equipment Installation</h3>
+                    <p>We're pleased to announce the installation of state-of-the-art equipment in our main laboratory. This technology will enhance our research capabilities significantly.</p>
+                </div>
+            </section>
+        </main>
+        
+        <section id="about">
+            <main>
+                <h2>About Our Institute</h2>
+                <p>Founded in 2010, our research institute is dedicated to advancing knowledge and innovation in our field. We bring together experts from various disciplines to tackle complex challenges and develop solutions that benefit society.</p>
+                <p>Our team consists of researchers, technicians, and support staff working collaboratively to push the boundaries of what's possible.</p>
+            </main>
+        </section>
+        
+        <section id="contact">
+            <main>
+                <h2>Contact Us</h2>
+                <p>123 Research Avenue<br>
+                Science City, SC 12345</p>
+                <p>Email: info@research-institute.org<br>
+                Phone: (123) 456-7890</p>
+            </main>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Research Institute. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Password protection script
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const correctPassword = "research2025"; // Change this to your desired password
+            
+            if (password === correctPassword) {
+                // Store in session storage that user is authenticated
+                sessionStorage.setItem('authenticated', 'true');
+                document.getElementById('passwordModal').style.display = 'none';
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+        
+        // Check if the user is already authenticated
+        window.onload = function() {
+            if (!sessionStorage.getItem('authenticated')) {
+                document.getElementById('passwordModal').style.display = 'block';
+            }
+        };
+    </script>
+</body>
+</html>
